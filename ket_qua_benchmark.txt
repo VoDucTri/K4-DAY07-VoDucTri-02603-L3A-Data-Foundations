@@ -1,0 +1,100 @@
+======================================================================
+BENCHMARK RETRIEVAL — LAB 7: DATA FOUNDATIONS
+Thành viên: Võ Đức Trí | Nhóm: [Chờ nhóm thống nhất] | Chủ đề: Ký túc xá
+======================================================================
+
+1. TẢI TÀI LIỆU TỪ: data\ky-tuc-xa (7 files)
+  - ktx-an-toan-pccc-tai-san.md      -> 6 chunks (audience: all)
+  - ktx-bieu-phi-phong-o.md          -> 5 chunks (audience: student)
+  - ktx-chinh-sach-mien-giam.md      -> 5 chunks (audience: student)
+  - ktx-noi-quy-chung.md             -> 5 chunks (audience: all)
+  - ktx-quy-dinh-luu-tru-khach.md    -> 6 chunks (audience: faculty)
+  - ktx-thu-tuc-dang-ky.md           -> 5 chunks (audience: student)
+  - ktx-xu-ly-ky-luat.md             -> 6 chunks (audience: student)
+
+Tổng số chunks đã tạo: 38
+Backend Embedder: mock embeddings fallback
+Số Document nạp vào EmbeddingStore: 38
+
+======================================================================
+2. KẾT QUẢ TRUY XUẤT 5 BENCHMARK QUERIES (TOP-3)
+======================================================================
+
+--- [Q1] (Tra cứu số liệu) ---
+Query: Lệ phí phòng tiện nghi 6 người có điều hòa tại Ký túc xá là bao nhiêu tiền một tháng và đơn giá điện vượt định mức là bao nhiêu?
+Tài liệu chuẩn (Gold Doc): ktx-bieu-phi-phong-o
+  Top-1 (score=0.2813): doc_id=ktx-xu-ly-ky-luat [ktx-xu-ly-ky-luat#3] 
+         Preview:    - Đánh bạc, cá độ, tổ chức uống rượu bia gây rối trật tự công cộng trong Ký túc xá.    - Trộm cắp, phá hoại tài sản c...
+  Top-2 (score=0.2167): doc_id=ktx-xu-ly-ky-luat [ktx-xu-ly-ky-luat#1] 
+         Preview: 1. **Mức 1 — Khiển trách cấp Ban quản lý:**    - Về muộn sau 23h00 không có lý do chính đáng lần đầu tiên trong học kỳ. ...
+  Top-3 (score=0.2015): doc_id=ktx-an-toan-pccc-tai-san [ktx-an-toan-pccc-tai-san#4] 
+         Preview: - Mỗi tầng nhà đều được trang bị 04 bình chữa cháy bột MFZ4 và 02 cuộn vòi cứu hỏa tại hai đầu hành lang. Người lưu trú ...
+-> Đánh giá: CHƯA ĐẠT (Không nằm trong Top-3) (0/2 điểm)
+
+--- [Q2] (Chính sách & Điều kiện) ---
+Query: Sinh viên thuộc diện hộ nghèo hoặc mồ côi cả cha lẫn mẹ được giảm bao nhiêu phần trăm lệ phí phòng ở Ký túc xá?
+Tài liệu chuẩn (Gold Doc): ktx-chinh-sach-mien-giam
+  Top-1 (score=0.2651): doc_id=ktx-quy-dinh-luu-tru-khach [ktx-quy-dinh-luu-tru-khach#0] 
+         Preview: # Quy định đón tiếp khách và lưu trú ngắn hạn tại Nhà khách Ký túc xá  Quy định này điều chỉnh việc tiếp đón khách công ...
+  Top-2 (score=0.1907): doc_id=ktx-noi-quy-chung [ktx-noi-quy-chung#0] 
+         Preview: # Nội quy chung Ký túc xá Bách khoa  Nội quy này áp dụng cho toàn thể người lưu trú, bao gồm sinh viên, học viên, cán bộ...
+  Top-3 (score=0.1891): doc_id=ktx-bieu-phi-phong-o [ktx-bieu-phi-phong-o#3] 
+         Preview: ## 3. Định mức điện, nước sinh hoạt và đơn giá phụ thu - **Nước sinh hoạt:** Định mức tiêu chuẩn là 4 m3/sinh viên/tháng...
+-> Đánh giá: CHƯA ĐẠT (Không nằm trong Top-3) (0/2 điểm)
+
+--- [Q3] (Quy trình & Thủ tục) ---
+Query: Sau khi nhận thông báo xét duyệt chỗ ở Ký túc xá, sinh viên phải hoàn thành đóng lệ phí trong thời hạn bao lâu?
+Tài liệu chuẩn (Gold Doc): ktx-thu-tuc-dang-ky
+  Top-1 (score=0.2414): doc_id=ktx-xu-ly-ky-luat [ktx-xu-ly-ky-luat#1] 
+         Preview: 1. **Mức 1 — Khiển trách cấp Ban quản lý:**    - Về muộn sau 23h00 không có lý do chính đáng lần đầu tiên trong học kỳ. ...
+  Top-2 (score=0.2324): doc_id=ktx-quy-dinh-luu-tru-khach [ktx-quy-dinh-luu-tru-khach#5] 
+         Preview: ## 3. Quy định đón tiếp khách trong ngày - Khách đến thăm sinh viên nội trú chỉ được tiếp đón tại **Phòng tiếp khách chu...
+  Top-3 (score=0.1744): doc_id=ktx-an-toan-pccc-tai-san [ktx-an-toan-pccc-tai-san#1] 
+         Preview: ## 1. Danh mục các thiết bị nghiêm cấm sử dụng trong phòng ở Để phòng ngừa triệt để nguy cơ cháy nổ do chập điện, người ...
+-> Đánh giá: CHƯA ĐẠT (Không nằm trong Top-3) (0/2 điểm)
+
+--- [Q4] (An toàn & Danh mục cấm) ---
+Query: Các thiết bị nấu nướng và sinh nhiệt nào bị nghiêm cấm mang vào sử dụng trong phòng ở Ký túc xá?
+Tài liệu chuẩn (Gold Doc): ktx-an-toan-pccc-tai-san
+  Top-1 (score=0.2078): doc_id=ktx-an-toan-pccc-tai-san [ktx-an-toan-pccc-tai-san#4] 
+         Preview: - Mỗi tầng nhà đều được trang bị 04 bình chữa cháy bột MFZ4 và 02 cuộn vòi cứu hỏa tại hai đầu hành lang. Người lưu trú ...
+  Top-2 (score=0.2070): doc_id=ktx-thu-tuc-dang-ky [ktx-thu-tuc-dang-ky#0] 
+         Preview: # Quy trình đăng ký và tiếp nhận sinh viên nội trú Ký túc xá  Tài liệu này hướng dẫn chi tiết quy trình đăng ký, xét duy...
+  Top-3 (score=0.1991): doc_id=ktx-noi-quy-chung [ktx-noi-quy-chung#0] 
+         Preview: # Nội quy chung Ký túc xá Bách khoa  Nội quy này áp dụng cho toàn thể người lưu trú, bao gồm sinh viên, học viên, cán bộ...
+-> Đánh giá: ĐẠT (Nằm trong Top-3) (1/2 điểm)
+
+--- [Q5] (A/B Metadata Filter (Phân biệt đối tượng)) ---
+Query: Mức thu tiền phòng lưu trú và thời hạn đăng ký tối đa theo quy định là bao nhiêu?
+Tài liệu chuẩn (Gold Doc): ktx-bieu-phi-phong-o
+Metadata Filter áp dụng: {'audience': 'student'}
+  Top-1 (score=0.2353): doc_id=ktx-bieu-phi-phong-o [ktx-bieu-phi-phong-o#1] [CHỨA ĐÁP ÁN]
+         Preview: | Loại phòng | Tiêu chuẩn trang bị | Đơn giá (VNĐ/tháng/SV) | Tiền cả kỳ (5 tháng) | | :--- | :--- | :--- | :--- | | **P...
+  Top-2 (score=0.1062): doc_id=ktx-bieu-phi-phong-o [ktx-bieu-phi-phong-o#3] [CHỨA ĐÁP ÁN]
+         Preview: ## 3. Định mức điện, nước sinh hoạt và đơn giá phụ thu - **Nước sinh hoạt:** Định mức tiêu chuẩn là 4 m3/sinh viên/tháng...
+  Top-3 (score=0.0667): doc_id=ktx-chinh-sach-mien-giam [ktx-chinh-sach-mien-giam#4] 
+         Preview:   - Áp dụng cho sinh viên thuộc diện hộ cận nghèo.  ## 3. Hồ sơ và thủ tục xin miễn giảm - Đơn đề nghị miễn giảm tiền ph...
+-> Đánh giá: XUẤT SẮC (Top-1 đúng tài liệu & chứa đáp án) (2/2 điểm)
+
+======================================================================
+3. KẾT QUẢ THỬ NGHIỆM A/B FILTERING (QUERY 5)
+======================================================================
+Query: Mức thu tiền phòng lưu trú và thời hạn đăng ký tối đa theo quy định là bao nhiêu?
+
+[A] KHÔNG LỌC METADATA (metadata_filter=None):
+  Top-1 (score=0.2353): ktx-bieu-phi-phong-o (audience: student)
+  Top-2 (score=0.1618): ktx-an-toan-pccc-tai-san (audience: all)
+  Top-3 (score=0.1062): ktx-bieu-phi-phong-o (audience: student)
+
+[B] CÓ LỌC METADATA (metadata_filter={'audience': 'student'}):
+  Top-1 (score=0.2353): ktx-bieu-phi-phong-o (audience: student)
+  Top-2 (score=0.1062): ktx-bieu-phi-phong-o (audience: student)
+  Top-3 (score=0.0667): ktx-chinh-sach-mien-giam (audience: student)
+
+Nhận xét A/B:
+- Khi không lọc, kết quả có thể lấy lẫn tài liệu nhà khách cán bộ/thân nhân (audience: faculty) hoặc nội quy chung.
+- Khi kích hoạt metadata_filter={'audience': 'student'}, 100% tài liệu trả về được giới hạn chuẩn xác vào đúng đối tượng sinh viên nội trú.
+
+======================================================================
+TỔNG KẾT: Điểm truy xuất = 3/10
+======================================================================
